@@ -23,13 +23,6 @@ Examples
 
 ## List Movies
 
-All the API endpoints return the same data structure as below. 
-| Returned Key        | Description           | Example  |
-| ------------- |:-------------|-----|
-| `status`      | The returned status for the API call, can be either 'ok' or 'error' | ok |
-| `status_message`      | Either the error message or the successful message      |   Query was successful |
-| `data` | If 'status' is returned as 'ok' the API query results will be inside 'data'      |    data |
-
 Used to list and search through out all the available movies. Can sort, filter, search and order the results
 
 ```ruby
