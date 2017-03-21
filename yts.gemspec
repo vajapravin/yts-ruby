@@ -11,8 +11,8 @@ Gem::Specification.new do |gem|
   gem.description = %q{A Ruby gem for accessing the YTS torrents api}
   gem.summary     = %q{A Ruby gem for accessing the YTS torrents api}
   gem.homepage    = "https://github.com/vajapravin/yts-ruby"
-  gem.files         = ['lib/yts.rb', 'lib/yts/client.rb', 'lib/yts/document.rb', 'lib/yts/movie.rb', 'lib/yts/version.rb']
-  gem.require_paths = ["."]
+  gem.require_paths  = %w[lib]
+  gem.files = Dir.glob("lib/**/*.rb")
   gem.add_development_dependency 'httparty', '~> 0', '0.13.5'
   gem.add_development_dependency 'nokogiri', '~> 1.6.8', '1.6.8'
   gem.license       = 'GNU'

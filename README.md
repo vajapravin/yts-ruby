@@ -27,8 +27,8 @@ Used to list and search through out all the available movies. Can sort, filter, 
 
 ```ruby
 yts = YTS::Movie.list('json') # Results in JSON Format
-yts = YTS::Movie.list('jsonp', {'limit':'10', 'page':'2', 'quality':'3D'}) # Results in JSONP Format
-yts = YTS::Movie.list('xml', {'limit':'20', 'page':'3', 'quality':'3D', 'minimum_rating':'5'}) # Results in XML Format
+yts = YTS::Movie.list('jsonp', {'limit'=>'10', 'page'=>'2', 'quality'=>'3D'}) # Results in JSONP Format
+yts = YTS::Movie.list('xml', {'limit'=>'20', 'page'=>'3', 'quality'=>'3D', 'minimum_rating'=>'5'}) # Results in XML Format
 ```
 
 ## Movie Details
@@ -36,7 +36,7 @@ yts = YTS::Movie.list('xml', {'limit':'20', 'page':'3', 'quality':'3D', 'minimum
 Returns the information about a specific movie
 
 ```
-yts = YTS::Movie.details('json', {'movie_id':'10'})
+yts = YTS::Movie.details('json', {'movie_id'=>'10'})
 ```
 
 ## Get Magnet URL
@@ -52,7 +52,7 @@ yts = YTS::Movie.make_magnet('F0B9DEE4BF17E60B111BAD37B281AFF634B24C99', 'https:
 Returns 4 related movies as suggestions for the user
 
 ```
-yts = YTS::Movie.suggestions('json', {'movie_id':'10'})
+yts = YTS::Movie.suggestions('json', {'movie_id'=>'10'})
 ```
 
 ## Movie Comments
@@ -60,7 +60,7 @@ yts = YTS::Movie.suggestions('json', {'movie_id':'10'})
 Returns all the comments for the specified movie
 
 ```
-yts = YTS::Movie.comments('json', {'movie_id':'10'})
+yts = YTS::Movie.comments('json', {'movie_id'=>'10'})
 ```
 
 ## Movie Reviews
@@ -68,7 +68,7 @@ yts = YTS::Movie.comments('json', {'movie_id':'10'})
 Returns all the comments for the specified movie
 
 ```
-yts = YTS::Movie.reviews('json', {'movie_id':'10'})
+yts = YTS::Movie.reviews('json', {'movie_id'=>'10'})
 ```
 
 ## Movie Parental Guides
@@ -76,7 +76,7 @@ yts = YTS::Movie.reviews('json', {'movie_id':'10'})
 Returns all the parental guide ratings for the specified movie
 
 ```
-yts = YTS::Movie.parental_guides('json', {'movie_id':'10'})
+yts = YTS::Movie.parental_guides('json', {'movie_id'=>'10'})
 ```
 
 ## List Upcoming
@@ -84,7 +84,7 @@ yts = YTS::Movie.parental_guides('json', {'movie_id':'10'})
 Returns the 4 latest upcoming movies
 
 ```
-yts = YTS::Movie.upcoming('json', {'movie_id':'10'})
+yts = YTS::Movie.upcoming('json', {'movie_id'=>'10'})
 ```
 
 ## User Details
@@ -92,7 +92,7 @@ yts = YTS::Movie.upcoming('json', {'movie_id':'10'})
 Get the user details
 
 ```
-yts = YTS::Movie.user_details('json', {'user_id':'10'})
+yts = YTS::Movie.user_details('json', {'user_id'=>'10'})
 ```
 
 ## Get User Key
@@ -100,7 +100,7 @@ yts = YTS::Movie.user_details('json', {'user_id':'10'})
 The same as logging in, if successful the returned data will include the user_key for later use of the API as a means of authentication
 
 ```
-yts = YTS::Movie.user_key('json', {'username':'your-username', 'password':'your-password', 'application_key':'application-key'})
+yts = YTS::Movie.user_key('json', {'username'=>'your-username', 'password'=>'your-password', 'application_key'=>'application-key'})
 ```
 
 ## User Profile
@@ -108,7 +108,7 @@ yts = YTS::Movie.user_key('json', {'username':'your-username', 'password':'your-
 This endpoint will return the full information about an authenticated user
 
 ```
-yts = YTS::Movie.user_profile('json', {'user_key':'1e2b2baddff6234'})
+yts = YTS::Movie.user_profile('json', {'user_key'=>'1e2b2baddff6234'})
 ```
 
 ## Edit User Settings
@@ -116,7 +116,7 @@ yts = YTS::Movie.user_profile('json', {'user_key':'1e2b2baddff6234'})
 Endpoint is used to edit an authenticated user's profile settings
 
 ```
-yts = YTS::Movie.user_edit_settings('json', {'user_key':'1e2b2baddff6234', 'application_key':'application-key', 'new_password':'new-password', 'about_text':'about-text', 'avatar_image':'avatar-image'})
+yts = YTS::Movie.user_edit_settings('json', {'user_key'=>'1e2b2baddff6234', 'application_key'=>'application-key', 'new_password'=>'new-password', 'about_text'=>'about-text', 'avatar_image'=>'avatar-image'})
 ```
 
 ## Register User
@@ -124,7 +124,7 @@ yts = YTS::Movie.user_edit_settings('json', {'user_key':'1e2b2baddff6234', 'appl
 Endpoint is used register a new user
 
 ```
-yts = YTS::Movie.register_user('json', {'user_key':'1e2b2baddff6234', 'application_key':'application-key', 'new_password':'new-password', 'about_text':'about-text', 'avatar_image':'avatar-image'})
+yts = YTS::Movie.register_user('json', {'user_key'=>'1e2b2baddff6234', 'application_key'=>'application-key', 'new_password'=>'new-password', 'about_text'=>'about-text', 'avatar_image'=>'avatar-image'})
 ```
 
 ## Forgot User Password
@@ -132,7 +132,7 @@ yts = YTS::Movie.register_user('json', {'user_key':'1e2b2baddff6234', 'applicati
 Endpoint is used to get a password reset code sent to their email to in case the user forgot their password
 
 ```
-yts = YTS::Movie.forgot_password('json', {'email':'vajapravin23@gmail.com', 'application_key':'application-key'})
+yts = YTS::Movie.forgot_password('json', {'email'=>'vajapravin23@gmail.com', 'application_key'=>'application-key'})
 ```
 
 ## Reset User Password
@@ -140,7 +140,7 @@ yts = YTS::Movie.forgot_password('json', {'email':'vajapravin23@gmail.com', 'app
 Endpoint is used to reset the user's password using the password reset code
 
 ```
-yts = YTS::Movie.reset_password('json', {'reset_code':'asdfasdfasdfasdf', 'new_password':'your-new-password', 'application_key':'application-key'})
+yts = YTS::Movie.reset_password('json', {'reset_code'=>'asdfasdfasdfasdf', 'new_password'=>'your-new-password', 'application_key'=>'application-key'})
 ```
 
 ## Like Movie
@@ -148,7 +148,7 @@ yts = YTS::Movie.reset_password('json', {'reset_code':'asdfasdfasdfasdf', 'new_p
 Endpoint is used to send a like (heart) for a specific movie
 
 ```
-yts = YTS::Movie.like_movie('json', {'user_key':'1e2b2baddff6234', 'movie_id':'17', 'application_key':'application-key'})
+yts = YTS::Movie.like_movie('json', {'user_key'=>'1e2b2baddff6234', 'movie_id'=>'17', 'application_key'=>'application-key'})
 ```
 
 ## Get Movie Bookmarks
@@ -156,7 +156,7 @@ yts = YTS::Movie.like_movie('json', {'user_key':'1e2b2baddff6234', 'movie_id':'1
 Endpoint is used to get all the current movies which have been bookmarked for a given user
 
 ```
-yts = YTS::Movie.get_bookmarks('json', {'user_key':'1e2b2baddff6234', 'with_rt_ratings':'9'})
+yts = YTS::Movie.get_bookmarks('json', {'user_key'=>'1e2b2baddff6234', 'with_rt_ratings'=>'9'})
 ```
 
 ## Add Movie Bookmark
@@ -164,7 +164,7 @@ yts = YTS::Movie.get_bookmarks('json', {'user_key':'1e2b2baddff6234', 'with_rt_r
 Endpoint is used to add any specific movie to the user's bookmarks
 
 ```
-yts = YTS::Movie.add_bookmarks('json', {'user_key':'1e2b2baddff6234', 'movie_id':'9', 'application_key':'application-key'})
+yts = YTS::Movie.add_bookmarks('json', {'user_key'=>'1e2b2baddff6234', 'movie_id'=>'9', 'application_key'=>'application-key'})
 ```
 
 ## Delete Movie Bookmark
@@ -172,7 +172,7 @@ yts = YTS::Movie.add_bookmarks('json', {'user_key':'1e2b2baddff6234', 'movie_id'
 Endpoint is used remove movies from the user's bookmarks
 
 ```
-yts = YTS::Movie.delete_bookmarks('json', {'user_key':'1e2b2baddff6234', 'movie_id':'9', 'application_key':'application-key'})
+yts = YTS::Movie.delete_bookmarks('json', {'user_key'=>'1e2b2baddff6234', 'movie_id'=>'9', 'application_key'=>'application-key'})
 ```
 
 ## Make Comment
@@ -180,7 +180,7 @@ yts = YTS::Movie.delete_bookmarks('json', {'user_key':'1e2b2baddff6234', 'movie_
 Endpoint is used allow a user to post a comment on a specific movie
 
 ```
-yts = YTS::Movie.make_comment('json', {'user_key':'1e2b2baddff6234', 'movie_id':'9', 'comment_text':'comment-text', 'application_key':'application-key'})
+yts = YTS::Movie.make_comment('json', {'user_key'=>'1e2b2baddff6234', 'movie_id'=>'9', 'comment_text'=>'comment-text', 'application_key'=>'application-key'})
 ```
 
 ## Like Comment
@@ -188,7 +188,7 @@ yts = YTS::Movie.make_comment('json', {'user_key':'1e2b2baddff6234', 'movie_id':
 Endpoint is used allow a user like (heart) a comment
 
 ```
-yts = YTS::Movie.like_comment('json', {'user_key':'1e2b2baddff6234', 'comment_id':'9', 'application_key':'application-key'})
+yts = YTS::Movie.like_comment('json', {'user_key'=>'1e2b2baddff6234', 'comment_id'=>'9', 'application_key'=>'application-key'})
 ```
 
 ## Report Comment
@@ -196,7 +196,7 @@ yts = YTS::Movie.like_comment('json', {'user_key':'1e2b2baddff6234', 'comment_id
 Endpoint is used allow a user to report a comment
 
 ```
-yts = YTS::Movie.report_comment('json', {'user_key':'1e2b2baddff6234', 'comment_id':'9', 'application_key':'application-key'})
+yts = YTS::Movie.report_comment('json', {'user_key'=>'1e2b2baddff6234', 'comment_id'=>'9', 'application_key'=>'application-key'})
 ```
 
 ## Delete Comment
@@ -204,7 +204,7 @@ yts = YTS::Movie.report_comment('json', {'user_key':'1e2b2baddff6234', 'comment_
 Endpoint is used allow a user to delete a comment (assuming its their own)
 
 ```
-yts = YTS::Movie.delete_comment('json', {'user_key':'1e2b2baddff6234', 'comment_id':'9', 'application_key':'application-key'})
+yts = YTS::Movie.delete_comment('json', {'user_key'=>'1e2b2baddff6234', 'comment_id'=>'9', 'application_key'=>'application-key'})
 ```
 
 ## Make Request
@@ -212,7 +212,7 @@ yts = YTS::Movie.delete_comment('json', {'user_key':'1e2b2baddff6234', 'comment_
 Endpoint is used allow a user to delete a comment (assuming its their own)
 
 ```
-yts = YTS::Movie.make_request('json', {'user_key':'1e2b2baddff6234', 'movie_title':'The Great Wall 2017', 'request_message':'Can you please upload this movie torrent?', 'application_key':'application-key'})
+yts = YTS::Movie.make_request('json', {'user_key'=>'1e2b2baddff6234', 'movie_title'=>'The Great Wall 2017', 'request_message'=>'Can you please upload this movie torrent?', 'application_key'=>'application-key'})
 ```
 
 ## Contributing
